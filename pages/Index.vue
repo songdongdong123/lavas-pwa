@@ -1,7 +1,13 @@
 <template>
     <div class="page-index">
-        <h2>LAVAS</h2>
-        <h4>[ˈlɑ:vəz]</h4>
+        <h2>1peso</h2>
+        <h4>Una experiencia de compras</h4>
+        <router-link :to="{
+            name: 'detailId',
+            params: {
+                id: 1
+            }
+        }">Detail {{1}}</router-link>
     </div>
 </template>
 
@@ -15,7 +21,7 @@ export default {
         titleTemplate: '%s - Lavas',
         meta: [
             {name: 'keywords', content: 'lavas PWA'},
-            {name: 'description', content: '基于 Vue 的 PWA 解决方案，帮助开发者快速搭建 PWA 应用，解决接入 PWA 的各种问题'}
+            {name: 'description', content: '基于 Vue 的 PWA 解决方案1，帮助开发者快速搭建 PWA 应用，解决接入 PWA 的各种问题'}
         ]
     },
     async asyncData({store, route}) {
