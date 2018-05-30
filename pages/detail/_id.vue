@@ -23,6 +23,7 @@ Fast - Respond quickly to user interactions with silky smooth animations and no 
 </template>
 
 <script>
+import {mapState} from 'vuex'
 export default {
     name: 'detail-_id',
     metaInfo() {
@@ -34,6 +35,17 @@ export default {
                 {name: 'description', content: `Lavas Sample Detail ${this.$route.params.id}`}
             ]
         }
+    },
+    async asyncData({store, route}) {
+        await store.dispatch('detail/setWeather', {woeid: 2151849});
+    },
+    computed: {
+        ...mapState('detail', [
+            'weather'
+        ])
+    },
+    created() {
+        console.log(`Weather of Shanghai: ${this.weather.text}, ${this.weather.temp}°F`);
     }
 };
 </script>
